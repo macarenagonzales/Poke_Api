@@ -42,6 +42,73 @@ button{
     border-radius: 0;
 }
 
+body{
+    min-height: 100vh;
+    background-color: var(--clr-gray);
+}
+
+header{
+    padding-block: 1rem;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.btn-header{
+    background-color: var(--clr-gray);
+    padding: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*COLORS*/
 .normal{
     background-color: var(--type-normal);
     color: var(--clr-black);
