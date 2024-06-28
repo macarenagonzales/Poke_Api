@@ -1,5 +1,3 @@
-
-
 const listaPokemon = document.querySelector("#listaPokemon");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -13,24 +11,29 @@ for ( let i = 1; i<=151; i++){
 function mostrarPokemon(poke){
 
     let tipos = poke.types.map(type => 
-            `<p class="${type.type.name}">${type.type.name}</p>`);
-    tipos = tipos.join();
+            `<p class="${type.type.name} tipo">${type.type.name}</p>`);
+    tipos = tipos.join('');
     
-
+    let pokeId = poke.id.toString();
+    if(pokeId.length === 1){
+        pokeId = "00" + pokeId;
+    }else if (pokeId.length === 2){
+        pokeId = "0" + pokeId;
+    }
 
 
     //const pokeId = poke.id;
     const div = document.createElement("div");
     div.classList.add("pokemon");
     div.innerHTML = `
-        <p class="pokemon-id-back">#${poke.id}</p>
+        <p class="pokemon-id-back">#${pokeId}</p>
         <div class="pokemon-imagen">
             <img src="${poke.sprites.other["official-artwork"].front_default}" alt="${poke.name}">
         </div>
 
         <div class="pokemon-info">
             <div class="nombre-contenedor">
-                <p class="pokemon-id">${poke.id}</p>
+                <p class="pokemon-id">#${pokeId}</p>
                 <h2 class="pokemon-nombre">${poke.name}</h2>
             </div>
             <div class="pokemon-tipos">
